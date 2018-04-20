@@ -6,8 +6,16 @@ using System.Linq;
 
 namespace Albuming.Console
 {
+    /// <summary>
+    /// Albuming entry point
+    /// </summary>
     class Program
     {
+        /// <summary>
+        /// repeatedly asks user to insert author name
+        /// and outputs albums for that author
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             try

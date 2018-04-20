@@ -7,8 +7,15 @@ using System.Threading.Tasks;
 
 namespace Albuming.Console
 {
+    /// <summary>
+    /// Helper for presenting albums in console
+    /// </summary>
     public static class AlbumsPrinter
     {
+        /// <summary>
+        /// Writes albums list to Console
+        /// </summary>
+        /// <param name="albums"></param>
         public static void PrintAlbums(IEnumerable<IAlbum> albums)
         {
             if (albums == null)

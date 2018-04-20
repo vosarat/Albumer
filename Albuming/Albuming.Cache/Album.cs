@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Albuming.Cache
 {
+    /// <summary>
+    /// Represents Albums table record in SQLite db
+    /// </summary>
     [Table("Albums")]
     public class Album : IAlbum
     {

@@ -9,13 +9,22 @@ using System.Threading.Tasks;
 
 namespace Albuming.Console
 {
+    /// <summary>
+    /// Static helper for reading album information
+    /// </summary>
     public static class AlbumsReader
     {
         public static bool HasInternet { get; private set; }
         private static IAlbumsCacheRepository cacheRepository = new SqliteAlbumsCacheRepository();
         private static IAlbumsWebClient webClient = new ITunesAlbumsWebClient();
 
-
+        /// <summary>
+        /// Returns albums for artist
+        /// first tries internet request
+        /// if not succeeded searches local cache
+        /// </summary>
+        /// <param name="author"></param>
+        /// <returns></returns>
         public static IEnumerable<IAlbum> GetAlbums(string author)
         {
             if (String.IsNullOrEmpty(author))
@@ -23,6 +32,7 @@ namespace Albuming.Console
 
             if (HasInternet = webClient.GetAlbumsIfConnected(author, out IEnumerable<IAlbum> albums))
             {
+                //probably need to do it asyncronisly not to stop ui
                 cacheRepository.SaveAlbumsOf(author, albums);
             }
             else

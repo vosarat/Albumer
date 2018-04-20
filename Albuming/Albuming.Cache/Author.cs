@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Albuming.Cache
 {
+    /// <summary>
+    /// Represent SQLite Authros Table record
+    /// </summary>
     [Table("Authors")]
     public class Author
     {

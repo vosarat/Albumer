@@ -1,4 +1,5 @@
-﻿using Albuming.Domain;
+﻿using Albuming.Cache;
+using Albuming.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace Albuming.Console
             {
                 while (true)
                 {
-                    System.Console.WriteLine("Найти альбомы исполнителя: ");
+                    System.Console.Write("Найти альбомы исполнителя: ");
                     string author = System.Console.ReadLine();
                     if (String.IsNullOrWhiteSpace(author)) continue;
 
@@ -22,16 +23,13 @@ namespace Albuming.Console
                     {
                         AlbumsPrinter.PrintAlbums(albums);
                     }
+                    else if (AlbumsReader.HasInternet)
+                    {
+                        System.Console.WriteLine("Не удалось найти ни одного альбома указанного автора");
+                    }
                     else
                     {
-                        if (AlbumsReader.HasInternet)
-                        {
-                            System.Console.WriteLine("Не удалось найти ни одного альбома указанного автора");
-                        }
-                        else
-                        {
-                            System.Console.WriteLine("Не удалось подключиться к интернету. В кеше нет информации по указанному автору");
-                        }
+                        System.Console.WriteLine("Не удалось подключиться к интернету. В кеше нет информации по указанному автору");
                     }
                 }
             }

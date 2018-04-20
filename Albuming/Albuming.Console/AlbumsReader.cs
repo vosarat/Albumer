@@ -1,4 +1,5 @@
-﻿using Albuming.Domain;
+﻿using Albuming.Cache;
+using Albuming.Domain;
 using Albuming.ITunes;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace Albuming.Console
     public static class AlbumsReader
     {
         public static bool HasInternet { get; private set; }
-        private static IAlbumsCacheRepository cacheRepository = null;
+        private static IAlbumsCacheRepository cacheRepository = new SqliteAlbumsCacheRepository();
         private static IAlbumsWebClient webClient = new ITunesAlbumsWebClient();
 
 
@@ -20,11 +21,9 @@ namespace Albuming.Console
             if (String.IsNullOrEmpty(author))
                 throw new Exception("Не было передано имя автора");
 
-            IEnumerable<IAlbum> albums;
-
-            if (HasInternet = webClient.GetAlbumsIfConnected(author, out albums))
+            if (HasInternet = webClient.GetAlbumsIfConnected(author, out IEnumerable<IAlbum> albums))
             {
-                //cacheRepository.SaveAlbumsOf(author, albums);
+                cacheRepository.SaveAlbumsOf(author, albums);
             }
             else
             {

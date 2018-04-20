@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27428.2037
+VisualStudioVersion = 15.0.26228.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Albuming.Console", "Albuming.Console\Albuming.Console.csproj", "{0524CB10-9EBD-4E15-8E68-5A77228AC87B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Albuming.Domain", "Albuming.Domain\Albuming.Domain.csproj", "{E598CE64-882B-48F8-8DFC-064DF853C008}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Albuming.ITunes", "Albuming.ITunes\Albuming.ITunes.csproj", "{9E0C2256-6E6A-4EEB-92DC-0A2940F220FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Albuming.Cache", "Albuming.Cache\Albuming.Cache.csproj", "{1D744946-8F2E-4615-A04F-7D93BD4EF91B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{9E0C2256-6E6A-4EEB-92DC-0A2940F220FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E0C2256-6E6A-4EEB-92DC-0A2940F220FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E0C2256-6E6A-4EEB-92DC-0A2940F220FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D744946-8F2E-4615-A04F-7D93BD4EF91B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D744946-8F2E-4615-A04F-7D93BD4EF91B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D744946-8F2E-4615-A04F-7D93BD4EF91B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D744946-8F2E-4615-A04F-7D93BD4EF91B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
